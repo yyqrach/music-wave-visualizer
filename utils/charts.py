@@ -40,6 +40,12 @@ def plot_waveform(y: np.ndarray, sr: int) -> plt.Figure:
 
 
 def plot_fft(y: np.ndarray, sr: int) -> plt.Figure:
+    if len(y) == 0:
+        fig, ax = _base_fig()
+        ax.text(0.5, 0.5, "No audio data", transform=ax.transAxes,
+                ha="center", va="center", color=TEXT)
+        return fig
+
     n = len(y)
     freqs = np.fft.rfftfreq(n, d=1 / sr)
     magnitudes = np.abs(np.fft.rfft(y)) / n
@@ -48,6 +54,13 @@ def plot_fft(y: np.ndarray, sr: int) -> plt.Figure:
     mask = freqs <= 8000
     freqs = freqs[mask]
     magnitudes = magnitudes[mask]
+
+    # Downsample to at most 2048 bins for readable, performant rendering
+    MAX_BINS = 2048
+    if len(freqs) > MAX_BINS:
+        idx = np.linspace(0, len(freqs) - 1, MAX_BINS, dtype=int)
+        freqs = freqs[idx]
+        magnitudes = magnitudes[idx]
 
     # Purple→orange gradient: map each bar by its position
     norm = mcolors.Normalize(vmin=0, vmax=len(freqs))
@@ -78,8 +91,9 @@ def plot_spectrogram(y: np.ndarray, sr: int) -> plt.Figure:
     img = librosa.display.specshow(
         S_db, sr=sr, x_axis="time", y_axis="mel", ax=ax, cmap=synth_cmap
     )
-    fig.colorbar(img, ax=ax, format="%+2.0f dB",
-                 label="Power (dB)").ax.yaxis.label.set_color(MUTED)
+    cbar = fig.colorbar(img, ax=ax, format="%+2.0f dB", label="Power (dB)")
+    cbar.ax.yaxis.label.set_color(MUTED)
+    cbar.ax.tick_params(colors=MUTED)
     ax.set_title("Spectrogram — Frequency over Time")
     ax.set_xlabel("Time (s)")
     ax.set_ylabel("Frequency (Hz, mel scale)")

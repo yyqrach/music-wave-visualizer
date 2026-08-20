@@ -1,5 +1,6 @@
 import io
 import numpy as np
+import matplotlib.pyplot as plt
 import streamlit as st
 import librosa
 from utils.styles import inject_styles
@@ -30,7 +31,9 @@ if uploaded_file is not None:
 
     # ── Waveform ───────────────────────────────────────────────────────────
     st.subheader("Waveform")
-    st.pyplot(plot_waveform(y, sr))
+    fig = plot_waveform(y, sr)
+    st.pyplot(fig)
+    plt.close(fig)
     with st.expander("Physics: Amplitude & Time"):
         st.markdown(
             """
@@ -47,7 +50,9 @@ if uploaded_file is not None:
 
     # ── Frequency Spectrum ─────────────────────────────────────────────────
     st.subheader("Frequency Spectrum (FFT)")
-    st.pyplot(plot_fft(y, sr))
+    fig = plot_fft(y, sr)
+    st.pyplot(fig)
+    plt.close(fig)
     with st.expander("Physics: Frequency & Harmonics"):
         st.markdown(
             """
@@ -64,7 +69,9 @@ if uploaded_file is not None:
 
     # ── Spectrogram ────────────────────────────────────────────────────────
     st.subheader("Spectrogram")
-    st.pyplot(plot_spectrogram(y, sr))
+    fig = plot_spectrogram(y, sr)
+    st.pyplot(fig)
+    plt.close(fig)
     with st.expander("Physics: Reading a Spectrogram"):
         st.markdown(
             """
