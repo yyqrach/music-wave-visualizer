@@ -16,11 +16,11 @@ st.markdown("---")
 st.subheader("Get in Touch")
 st.markdown(
     """
-    **Name:** Shun Akiyama
+    **Name:** (Placeholder)
 
-    **Email:** [akanie6222@gmail.com](mailto:akanie6222@gmail.com)
+    **Email:** (Placeholder)
 
-    **GitHub:** [github.com/shunakiya](https://github.com/shunakiya)
+    **GitHub:** (Placeholder)
     """,
     unsafe_allow_html=False,
 )
