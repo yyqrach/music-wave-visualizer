@@ -39,7 +39,7 @@ st.markdown(
     and your brain interprets the signal as sound.
     """
 )
-embed_video("c_rDUnXpmfc")
+embed_video("Placeholder")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
