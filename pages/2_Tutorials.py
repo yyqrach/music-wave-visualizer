@@ -39,7 +39,7 @@ st.markdown(
     and your brain interprets the signal as sound.
     """
 )
-embed_video("eQEayAL5iqk")  # "Sound: Crash Course Physics #18"
+embed_video("Placeholder")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -54,7 +54,7 @@ st.markdown(
     every 10 dB roughly doubles the perceived loudness.
     """
 )
-embed_video("TFHsGBPVOeI")  # "Amplitude, Period, Frequency and Wavelength of Periodic Waves"
+embed_video("Placeholder")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -69,7 +69,7 @@ st.markdown(
     frequency that is present in the sound.
     """
 )
-embed_video("i_0DXxmbwMg")  # "Frequency and Pitch"
+embed_video("Placeholder")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -85,4 +85,4 @@ st.markdown(
     In the frequency spectrum, you can literally see these harmonic peaks lined up.
     """
 )
-embed_video("NBpNSQNpVR4")  # "Musical Overtones: Why Do Instruments Sound Different?"
+embed_video("Placeholder")
