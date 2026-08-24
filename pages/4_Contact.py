@@ -16,7 +16,7 @@ st.markdown("---")
 st.subheader("Get in Touch")
 st.markdown(
     """
-    **Name:** Rachel Yang
+    **Name:** Rachel Yiqiao Yang
 
     **Email:** musicwavesvisualizer@gmail.com
 
