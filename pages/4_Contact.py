@@ -18,7 +18,7 @@ st.markdown(
     """
     **Name:** Rachel Yang
 
-    **Email:** musicwavesvisualizer@gmail.com \n yangrachel1109@gmail.com
+    **Email:** musicwavesvisualizer@gmail.com
 
     **GitHub:** @yyqrach
     """,
