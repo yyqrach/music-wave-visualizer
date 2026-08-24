@@ -7,7 +7,7 @@ inject_styles()
 st.title("Contact")
 st.markdown(
     """
-    Have a question, suggestion, or just want to say hello? Reach out below.
+    Any questions, suggestions, or just want to say hi? Feel free to reach out below!
     """
 )
 
@@ -16,11 +16,11 @@ st.markdown("---")
 st.subheader("Get in Touch")
 st.markdown(
     """
-    **Name:** (Placeholder)
+    **Name:** Rachel Yang
 
-    **Email:** (Placeholder)
+    **Email:** musicwavesvisualizer@gmail.com \n yangrachel1109@gmail.com
 
-    **GitHub:** (Placeholder)
+    **GitHub:** @yyqrach
     """,
     unsafe_allow_html=False,
 )
